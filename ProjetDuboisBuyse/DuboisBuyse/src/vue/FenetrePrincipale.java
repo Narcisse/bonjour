@@ -4,11 +4,9 @@ import controleur.All;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -88,17 +86,24 @@ public class FenetrePrincipale extends JFrame{
         pan1.setPreferredSize(new Dimension(All.largeurEcran, All.pourcentage(0.1, All.hauteurEcran)));
         
         
-        JPanel pan2 = new JPanel(new GridLayout(10, 1, 0, 0));
-        pan2.setBackground(Color.blue);
-        pan2.setPreferredSize(new Dimension(All.pourcentage(0.25, All.largeurEcran), All.hauteurUtile-All.pourcentage(0.1, All.hauteurUtile)));
-        JLabel test = new JLabel("Les echelons      ");
+        BoutonMenu test = new BoutonMenu("Les echelons");
         test.setHorizontalAlignment(RIGHT);
         test.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         test.setFont(new Font("Arial", Font.BOLD, 24));
-        pan2.add(test);
+        
+        BoutonMenu test2 = new BoutonMenu("Les echelons");
+        test2.setHorizontalAlignment(RIGHT);
+        test2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        test2.setFont(new Font("Arial", Font.BOLD, 24));
+        
+        ArrayList<JLabel> uneListe = new ArrayList<>();
+        uneListe.add(test);
+        uneListe.add(test2);
+        
+        PanDesMenus panneau = new PanDesMenus(uneListe);
         
         JPanel pan3 = new JPanel(new GridLayout(1, 1, 3, 3));
         pan3.setBackground(Color.yellow);
-        FenetrePrincipale uneFrame = new FenetrePrincipale(pan1, pan2, pan3);
+        FenetrePrincipale uneFrame = new FenetrePrincipale(pan1, panneau, pan3);
     }
 }

@@ -1,5 +1,7 @@
 package controleur;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 
@@ -13,6 +15,8 @@ public class All {
     public static final int largeurEcran = Toolkit.getDefaultToolkit().getScreenSize().width;
     public static final int hauteurEcran = Toolkit.getDefaultToolkit().getScreenSize().height;
     public static final int hauteurUtile = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;
+    public static final Font policeProjet = new Font("Arial", Font.BOLD, 24);
+    public static final Color couleurDeFond = Color.WHITE;
     
     
     // *************************************************************************
