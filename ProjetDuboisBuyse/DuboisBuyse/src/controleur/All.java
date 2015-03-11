@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.Random;
 import vue.BoutonMenu;
 
 /**
@@ -38,7 +39,21 @@ public class All {
     
     // *************************************************************************
     // Methodes specifiques
-    
+    public static int getRandom(int de0aCeNombreExclusif){
+        Random generator = new Random();
+        int nbRetour = generator.nextInt(de0aCeNombreExclusif);
+        return nbRetour;
+    }
+    public static boolean estDejaLa(ArrayList<String> uneListe, String mot){
+        boolean estPresent = false;
+        for(int i=0; i<uneListe.size(); i++){
+            if (uneListe.get(i).equals(mot)){
+                estPresent = true;
+                break;
+            }
+        }
+        return estPresent;
+    }
     // Fonction qui renvoi un pourcentage en entier d'une valeur
     // Ex: passer 0.1 et la hauteur de lecran renvoi une valeur en int pouvant
     // etre utiliser pour occuper 10% de la hauteur de l'ecran

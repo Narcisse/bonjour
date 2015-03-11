@@ -2,13 +2,11 @@ package vue;
 
 import controleur.All;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import static javax.swing.SwingConstants.RIGHT;
 
 /**
  *

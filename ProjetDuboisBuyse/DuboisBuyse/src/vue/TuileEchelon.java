@@ -8,6 +8,11 @@ import javax.swing.JPanel;
  */
 public class TuileEchelon extends JPanel{
     // *************************************************************************
+    // Constructeur
+    public TuileEchelon(){
+        super();
+    }
+    // *************************************************************************
     // Main
     public static void main(String[] args){
         System.out.println("Hello world!");
