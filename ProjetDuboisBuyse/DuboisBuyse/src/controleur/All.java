@@ -4,8 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+import modele.EchelleDuboisBuyseFr;
 import vue.BoutonMenu;
 
 /**
@@ -53,6 +55,15 @@ public class All {
             }
         }
         return estPresent;
+    }
+    public EchelleDuboisBuyseFr genererEchelle(){
+        File echelle = new File("data\\Echelle\\echelle_francaise.txt");
+        EchelleDuboisBuyseFr echelleFrancaise = new EchelleDuboisBuyseFr();
+        
+        return echelleFrancaise;
+    }
+    public void enregistrerLechelle(EchelleDuboisBuyseFr uneEchelle){
+        
     }
     // Fonction qui renvoi un pourcentage en entier d'une valeur
     // Ex: passer 0.1 et la hauteur de lecran renvoi une valeur en int pouvant

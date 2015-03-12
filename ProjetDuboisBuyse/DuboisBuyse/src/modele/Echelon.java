@@ -34,8 +34,8 @@ public class Echelon implements Serializable{
     
     // *************************************************************************
     // Constructeur
-    public Echelon(ArrayList<String> uneListeDeMots){
-        this.motsDeLechelon = uneListeDeMots;
+    public Echelon(){
+        this.motsDeLechelon = new ArrayList<>();
     }
     
     // *************************************************************************
@@ -99,6 +99,10 @@ public class Echelon implements Serializable{
         }
         return affichage;
     }
+    
+    public void addMot(String unMot){
+        motsDeLechelon.add(unMot);
+    }
     // *************************************************************************
     // Main (zone de test)
     public static void main(String[] args){
@@ -107,14 +111,12 @@ public class Echelon implements Serializable{
         String mot3 = "dahlia";
         String mot4 = "exhaler";
         
-        ArrayList<String> motsDeLechelon = new ArrayList<>();
+        Echelon echelonZ = new Echelon();
         
-        motsDeLechelon.add(mot1);
-        motsDeLechelon.add(mot2);
-        motsDeLechelon.add(mot3);
-        motsDeLechelon.add(mot4);
-        
-        Echelon echelonZ = new Echelon(motsDeLechelon);
+        echelonZ.addMot(mot1);
+        echelonZ.addMot(mot2);
+        echelonZ.addMot(mot3);
+        echelonZ.addMot(mot4);
         
         JOptionPane.showMessageDialog(null, echelonZ.getListeAffichable(true));
     }
