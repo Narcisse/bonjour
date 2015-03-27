@@ -31,7 +31,6 @@ public class Echelon implements Serializable{
     // *************************************************************************
     // Donnee membre
     private ArrayList<String> motsDeLechelon;
-    
     // *************************************************************************
     // Constructeur
     public Echelon(){
@@ -98,6 +97,9 @@ public class Echelon implements Serializable{
             }
         }
         return affichage;
+    }
+    public ArrayList<String> getMotsEchelon(){
+        return this.motsDeLechelon;
     }
     
     public void addMot(String unMot){

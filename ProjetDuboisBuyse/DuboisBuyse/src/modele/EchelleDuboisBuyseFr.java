@@ -23,4 +23,10 @@ public class EchelleDuboisBuyseFr implements Serializable{
     public void addEchelon(Echelon unEchelon){
         this.echelons.add(unEchelon);
     }
+    
+    // *************************************************************************
+    // Accesseurs / Mutateurs
+    public ArrayList<Echelon> getEchelons(){
+        return this.echelons;
+    }
 }

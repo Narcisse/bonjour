@@ -53,8 +53,7 @@ public class PanDesMenus extends JPanel{
     // *************************************************************************
     // Main
     public static void main(String[] args){        
-        PanDesMenus panneau = new PanDesMenus(All.getBoutonsMenu());
-        
+        PanDesMenus panneau = new PanDesMenus(All.getBoutonsMenu(null));
         JFrame frame = new JFrame(PanDesMenus.class.getSimpleName());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panneau);

@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import modele.EchelleDuboisBuyseFr;
 
 /**
  *
@@ -32,7 +33,7 @@ public class PanDesEchelons extends JPanel{
         
         // Creation du GridLayout , 5 colonnes, nombre indetermine de rangees
         setLayout(new GridLayout(0, 5, 10, 10));
-        for (TuileEchelon tuile : uneListe){
+        for (TuileEchelon tuile : lesTuilesEchelons){
             add(tuile);
         }
         
@@ -41,10 +42,10 @@ public class PanDesEchelons extends JPanel{
     // *************************************************************************
     // Main
     public static void main(String[] args){
+        EchelleDuboisBuyseFr echelle = All.getEchelleDB();
         ArrayList<TuileEchelon> tuiles = new ArrayList<>();
-        for (int i=0; i<37; i++){
-            TuileEchelon tuile = new TuileEchelon();
-            tuile.setBackground(Color.red);
+        for (int i=0; i<echelle.getEchelons().size(); i++){
+            TuileEchelon tuile = new TuileEchelon(echelle.getEchelons().get(i), i+1);
             tuiles.add(tuile);
         }
         JFrame frame = new JFrame("Test");

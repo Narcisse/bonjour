@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import modele.EchelleDuboisBuyseFr;
 
 /**
  *
@@ -33,6 +35,9 @@ public class FenetrePrincipale extends JFrame{
                                   // que les albums sur itunes les differents
                                   // echelons de l'echelle dubois-buyse
     
+    private JScrollPane scroller; // Panneau conteneur qui prendra la librairie
+                                  // d'echelons (les tuile echelons) et les
+                                  // affichera dans une interface defilable.
     
     // *************************************************************************
     // Constructeur
@@ -60,13 +65,16 @@ public class FenetrePrincipale extends JFrame{
         this.lesMenus = lesMenus;
         this.librairie = librairie;
         
+        // initialisation du scrollPane pour les librairies
+        this.scroller = new JScrollPane(this.librairie);
+        
         // On applique un borderLayout a la fenetre principale
         this.setLayout(new BorderLayout());
         
         // On positionne les panneaux
         this.add(this.controleFrame, BorderLayout.NORTH);
         this.add(this.lesMenus, BorderLayout.WEST);
-        this.add(this.librairie, BorderLayout.CENTER);
+        this.add(this.scroller, BorderLayout.CENTER);
         
         
         this.setVisible(true);
@@ -82,11 +90,9 @@ public class FenetrePrincipale extends JFrame{
         JPanel pan1 = new JPanel(new GridLayout(2, 1, 3, 3));
         pan1.setBackground(Color.red);
         pan1.setPreferredSize(new Dimension(All.largeurEcran, All.pourcentage(0.1, All.hauteurEcran)));
-        
-        PanDesMenus panneau = new PanDesMenus(All.getBoutonsMenu());
-        
-        JPanel pan3 = new JPanel(new GridLayout(1, 1, 3, 3));
-        pan3.setBackground(Color.yellow);
+        ArrayList<TuileEchelon> tuiles = All.getListeTuiles();
+        PanDesEchelons pan3 = new PanDesEchelons(tuiles);
+        PanDesMenus panneau = new PanDesMenus(All.getBoutonsMenu(pan3));
         FenetrePrincipale uneFrame = new FenetrePrincipale(pan1, panneau, pan3);
     }
 }
